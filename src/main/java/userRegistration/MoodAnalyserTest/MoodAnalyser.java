@@ -10,23 +10,22 @@ public class MoodAnalyser {
 		this.message=message;
 	}
 	public MoodAnalyser() {
-		
+		this.message="";
 	}
 	
-	public String analyseMood() {
+	public String analyseMood() throws CustomException{
 		
 	try {
-			if(message.contains("Sad"))
-				return "SAD";
-			else if (message.contains("Happy"))
-				return "Sad";
-			else
-				return "Happy";
+		if (message.length() ==0)
+            throw new CustomException(CustomException.ExceptionTyp.ENTERED_EMPTY, "Please enter non empty message");
+		else if (message.contains("sad"))
+			return "SAD";
+		else
+			return "HAPPY";
 		}
 	catch(NullPointerException ex) {
-		return "Happy";
+		throw new CustomException(CustomException.ExceptionTyp.ENTERED_NULL, "Please enter sad or happy");
 	}
-	
 	}
 	
 	
