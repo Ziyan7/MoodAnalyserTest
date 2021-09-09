@@ -5,9 +5,11 @@ package userRegistration.MoodAnalyserTest;
  * based on the condition happy or sad is returned
  */
 public class MoodAnalyser {
-	
-
-	public String analyseMood(String message) {
+	String message;
+	public MoodAnalyser(String message) {
+		this.message=message;
+	}
+	public String analyseMood() {
 	
 			if(message.contains("Sad"))
 				return "SAD";
