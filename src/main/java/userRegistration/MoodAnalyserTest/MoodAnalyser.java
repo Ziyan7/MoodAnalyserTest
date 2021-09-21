@@ -17,14 +17,14 @@ public class MoodAnalyser {
 		
 	try {
 		if (message.length() ==0)
-            throw new CustomException(CustomException.ExceptionTyp.ENTERED_EMPTY, "Please enter non empty message");
+            throw new CustomException(CustomException.ExceptionType.ENTERED_EMPTY, "Please enter non empty message");
 		else if (message.contains("sad"))
 			return "SAD";
 		else
 			return "HAPPY";
 		}
 	catch(NullPointerException ex) {
-		throw new CustomException(CustomException.ExceptionTyp.ENTERED_NULL, "Please enter sad or happy");
+		throw new CustomException(CustomException.ExceptionType.ENTERED_NULL, "Please enter sad or happy");
 	}
 	}
 	
